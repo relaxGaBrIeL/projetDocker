@@ -1,0 +1,19 @@
+version: '3'                #dernière version
+services:
+  web:
+    build: ./serveurWeb     #run automatiquement l'image sans avoir besoin de la run
+    ports:
+      - "8084:80"             #set du port
+    depends_on:
+      - database            #lien avec la configuration de la base de données
+    environment:
+      DB_HOST: database     #définition des constantes nécéssaires à la connexion
+      DB_PORT: 3306
+      DB_USER: admin
+      DB_PASSWORD: admin
+      DB_NAME: projetDocker
+
+  database:
+    build: ./baseDeDonnees
+    ports:
+      - "3306:3306"

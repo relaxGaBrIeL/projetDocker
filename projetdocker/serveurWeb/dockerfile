@@ -1,0 +1,15 @@
+#On prend l'image d'apache avec le module php
+FROM php:7.4-apache
+
+#On installe mysqli qui permet la connexion avec la base de données
+RUN apt-get update && apt-get install -y
+RUN docker-php-ext-install mysqli
+
+#On copie notre page php dans le serveur apache
+COPY index.php /var/www/html/
+
+#Définissez le répertoire de travail sur /var/www/html
+#WORKDIR /var/www/html
+
+#On ouvre le port 80
+EXPOSE 8084

@@ -1,0 +1,11 @@
+#On prend la dernière image de mariadb
+FROM mariadb:latest                             
+
+#On définit les variables d'environnement
+ENV MYSQL_DATABASE projetDocker
+ENV MYSQL_USER admin
+ENV MYSQL_PASSWORD admin
+ENV MYSQL_ROOT_PASSWORD password
+
+#On ajoute le script sql préalablement créé qui va s'éxécuter tout seul au lancement du conteneur
+ADD tables.sql /docker-entrypoint-initdb.d/

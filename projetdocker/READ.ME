@@ -1,0 +1,22 @@
+Contexte :
+    J'ai choisi de mettre en place plusieurs conteneurs :
+        - Un qui contient un serveur Web (apache)
+        - Un qui contient une base de données (mariadb)
+
+    Grâce au docker-compose, j'ai réussi à établir un lien entre les deux
+
+Lancement :
+    Pour le lancement du projet, il suffit d'exécuter le script 'script.sh' présent à la racine.
+
+    Il faudra ensuite se rendre sur un navigateur et écrire dans la barre de recherches : 'localhost:8084'.
+	(J'ai pris la liberté d'ouvrir le port 8084 au cas où le port 80 soit déjà pris)
+
+    Vous devriez arriver sur une page se nommant 'Projet Docker' avec comme contenu une liste d'utilisateurs.
+
+Explications :
+    J'ai fait le choix ne pas aller plus loin dans la création du site web car ce n'est pas le but de ce projet.
+
+    Ici, ce qui est important c'est le fait que deux conteneurs communiquent et que le lien soit visible (page Web).
+
+    La base de données est instanciée par le script 'tables.sql' (dans le dossier baseDeDonnees/) qui contient une table Users ainsi que 4 enregistrements.
+        Pour vérifier le fonctionnement, il est tout à fait possible d'ajouter un enregistrement et on pourra constater qu'il apparaîtra sur le site.
